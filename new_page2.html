@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html
+ 
+lang="en">
+
+<head>
+
+    
+<meta
+ 
+charset="UTF-8">
+
+    
+<meta
+ 
+name="viewport"
+ 
+content="width=device-width, initial-scale=1.0">
+
+    
+<title>After Payment</title>
+</head>
+<body>
+    <div class="container">
+        <div id="order-details">
+            <h1>Thank you for your order!</h1>
+
+            <p>This is the item you ordered. Would you like to confirm it?</p> <button>yes</button>   <button>no</button>
+            <img src="ind.jpg" alt="Order Location Map">
+            <img src="cont.jpg" alt="Restaurant Order"> 
+<p>Are you satisfied with this for one last time?</p> <button>yes</button>   <button>no</button>
+            <h3>Order Summary</h3>
+            <ul>
+                <li>Restaurant: [Restaurant Name]</li>
+                <li>Order Items: [List of ordered items]</li>
+                <li>Total Amount: [Total amount]</li>
+            </ul>
+
+            <p>Your order will be delivered within the estimated time of [Estimated delivery time].</p>
+        </div>
+
+        <div id="processing-message">
+            <h1>Order Status</h1>
+            <p>Your order is currently being processed. Please wait for the confirmation message.</p>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+   
+   
+   
+   
+   body {
+  background-image: linear-gradient(to right, #ffb807, #f7e8bf); /* Create a subtle gradient background */
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #fff; /* Maintain white background for the container */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+body {
+  background-image: linear-gradient(to right, #ffb807, #f7e8bf); /* Create a subtle gradient background */
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 170vh;
+}
+
+.container {
+  background-color: #fff; /* Maintain white background for the container */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 90%; /* Increase container width to 90% */
+  max-width: 900px; /* Set a maximum width for larger screens */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+h1 {
+  color: #333;
+  font-size: 24px; /* Increase font size for headings */
+  margin-bottom: 20px;
+}
+
+#order-map {
+  width: 100%;
+  height: 300px;
+  border: 1px solid #ccc; /* Add a subtle border to the map */
+  margin-bottom: 20px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px; /* Add slight rounded corners to images */
+  margin-bottom: 10px;
+}
+
+#otp {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FF5733;
+  margin-top: 20px;
+}
+
+/* Add some decorative styling for the order summary list */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+</style>
+
+<script>
+    const orderDetailsElement = document.getElementById('order-details');
+const processingMessageElement = document.getElementById('processing-message');
+
+// Check if the order has been placed
+if (orderPlaced) {
+    orderDetailsElement.style.display = 'block';
+    processingMessageElement.style.display = 'none';
+} else {
+    orderDetailsElement.style.display = 'none';
+    processingMessageElement.style.display = 'block';
+}
+</script>

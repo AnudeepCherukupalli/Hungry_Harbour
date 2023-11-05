@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hungry Harbour</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #ffb807;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .rana{
+            text-align : center;
+            margin-bottom: 20px;
+            margin-left : 50px;
+        }
+
+        .main-section {
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .main-section h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            color: #ffb807; /* Set color to #ffb807 */
+        }
+
+        .brand-section {
+            padding: 20px;
+            background-color: #BDE7ED;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .brand-section h2 {
+            color: #333;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .brand-section h2 img {
+            max-height: 40px;
+            margin-right: 10px;
+        }
+
+        .brand-menu {
+            display: none;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .menu-item {
+            width: 30%;
+            padding: 10px;
+            margin: 10px;
+            background-color: #ddd;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .menu-item img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        
+
+        .popup label {
+            display: block;
+            margin: 10px 0;
+        }
+        .jishnu{
+            width:100px;
+        }
+        .anudeep{
+            width: 100px;
+        }
+        .kanak{
+            width : 200px;
+        }
+        .add-to-cart {
+  margin-right: 0;
+  
+  float:right;
+}
+
+        
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-bar {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar li {
+    display: inline-block;
+    margin: 0 20px;
+}
+.tagline{
+    color : red;
+}
+
+.nav-bar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+hi {
+  font-size: 20px;
+  margin-left: 30px;
+  float: left;
+  font-weight: bold;
+}
+nav {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+        .popup button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Hungry Harbour</h1>
+        <p>Delicious Food, Delivered to Your Doorstep</p>
+        <input type="text" id="searchbar" placeholder="Search for Restaurants">
+        <button class="add-to-cart">Cart</button>
+<script>
+  const addToCartButton = document.querySelector('.add-to-cart'); // Select by class
+
+addToCartButton.addEventListener('click', () => {
+  const image = document.createElement('img');
+  image.src = "cart.png";
+  image.alt = 'Image Description';
+
+  // Append the image element to the DOM
+  document.body.appendChild(image);
+});
+</script>
+
+    </header>
+
+    <div class="main-section">
+        <h1>Welcome to Hungry Harbour</h1>
+        <p class="tagline">Fresh at Your Doorstep</p>
+    </div>
+    
+    <nav>
+        <ul class="nav-bar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Food Categories</a></li>
+            <li><a href="#" id="order-link">Your order</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </nav>
+    
+    <hi>Recommendations For You</hi>
+    
+    
+
+    <nav>
+        <ul class="nav-bar">
+            <li><a href="#">Home</a></li>
+            <li><a href="new_page1.html">Food Categories</a></li>
+            <li><a href="new_page2.html" id="order-link">Your order</a></li>
+            <li><a href="new_page3.html">Profile</a></li>
+            <li><a href="new_page4.html">Help</a></li>
+        </ul>
+    </nav>
+
+    
+    <script>
+        // JavaScript to prevent the default link behavior (to avoid following the href)
+        document.getElementById("order-link").addEventListener("click", function (event) {
+            event.preventDefault();
+        });
+    </script>
+    
+    
+        
+    </hi>
+
+
+    <div class="brand-section" onclick="toggleBrandMenu(document.getElementById('targetMenu'))">
+        <h2>Target</h2>
+        <img  class = "anudeep" src = "target.png" alt = "Target">
+        <div class="brand-menu" id="targetMenu">
+            <!-- Brand menu content goes here -->
+            <div class="menu-item" onclick="showFoodOptions('Vegetables Options')">
+                <p>Fruits</p>
+            </div>
+            <div class="menu-item" onclick="showFoodOptions('targetBurgerOptions')">
+
+                <p>Burger</p>
+            </div>
+            <div class="menu-item" onclick="showFoodOptions('targetSandwichOptions')">
+            </div>
+            
+                <p>Sandwich</p>
+            </div>
+        </div>
+    </div>
+       
+
+    <div class="brand-section" onclick="toggleBrandMenu(document.getElementById('dominosMenu'))">
+        <h2>Domino's</h2>
+        <img class = "kanak" src="dominos.png" alt = "Dominos">
+        <div class="brand-menu" id="dominosMenu">
+            <!-- Brand menu content goes here -->
+            <div class="menu-item" onclick="showFoodOptions('dominosPizzaOptions')">
+                <p>Pizza</p>
+            </div>
+            <div class="menu-item" onclick="showFoodOptions('dominosPastaOptions')">
+                <p>Pasta</p>
+            </div>
+            <div class="menu-item" onclick="showFoodOptions('dominosWingsOptions')">
+                <p>Wings</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="brand-section" onclick="toggleBrandMenu(document.getElementById('pizzaHutMenu'))">
+        <h2> Pizza Hut</h2>
+        <img src="pizza.png" alt="Pizza Hut">
+        <div class="brand-menu" id="pizzaHutMenu">
+            <!-- Brand menu content goes here -->
+            <div class="menu-item" onclick="showFoodOptions('pizzaHutPizzaOptions')">
+                
+                <p>Pizza</p>
+            </div>
+            <div class="menu-item" onclick="showFoodOptions('pizzaHutPastaOptions')">
+               
+                <p>Pasta</p>
+            </div>
+            <div class="menu-item" onclick="showFoodOptions('pizzaHutDessertOptions')">
+              
+                <p>Dessert</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="brand-section" onclick="toggleBrandMenu(document.getElementById('tacoBellMenu'))">
+        <h2>Taco Bell</h2>
+        <img class = "jishnu" src = "tacobell.png" alt ="Taco Bell">
+        <div class="brand-menu" id="tacoBellMenu">
+            <!-- Brand menu content goes here -->
+            <div class="menu-item" onclick="showFoodOptions('tacoBellTacoOptions')">
+                
+                <p>Taco</p>
+            </div>
+            <div class="menu-item" onclick="showFoodOptions('tacoBellBurritoOptions')">
+               
+                <p>Burrito</p>
+            </div>
+            <div class="menu-item" onclick="showFoodOptions('tacoBellNachosOptions')">
+                
+                <p>Nachos</p>
+            </div>
+        </div>
+    </div>
+
+<!-- Pizza Options Popup -->
+<!-- Pizza Options Popup -->
+<div id="Vegetables Options" class="popup">
+    <h3>Select Your Vegetables</h3>
+    <label for="Vegetables">Quantity:</label>
+    <select id="Quantity" name="Quantity">
+        <option value="small">Half lb</option>
+        <option value="medium">One lb</option>
+        <option value="large">Two lb</option>
+    </select>
+
+        <label for="topping">Choose Toppings:</label>
+        <input type="checkbox" name="topping" value="lettuce"> Lettuce
+        <input type="checkbox" name="topping" value="tomato"> Tomato
+        <input type="checkbox" name="topping" value="onion"> Onion
+    
+        <button onclick="hideFoodOptions('Vegetables Options')">Done</button>
+    </div>
+    
+
+<script>
+        function hideFoodOptions(popupId) {
+            // Get the popup element
+            const popup = document.getElementById(popupId);
+    
+            // Check if the popup exists and hide it
+            if (popup) {
+                popup.style.display = 'none';
+            }
+        }
+    </script>
+
+
+      
+      
+
+
+    <!-- Burger Options Popup -->
+    <div id="targetBurgerOptions" class="popup">
+        <h3>Customize Your Burger</h3>
+        <label for="burgerSize">Select Burger Size:</label>
+        <select id="burgerSize" name="burgerSize">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+    
+        <label for="topping">Choose Toppings:</label>
+        <input type="checkbox" name="topping" value="lettuce"> Lettuce
+        <input type="checkbox" name="topping" value="tomato"> Tomato
+        <input type="checkbox" name="topping" value="onion"> Onion
+    
+        <button onclick="hideFoodOptions('targetBurgerOptions')">Done</button>
+    </div>
+    
+    <script>
+        function hideFoodOptions(popupId) {
+            // Get the popup element
+            const popup = document.getElementById(popupId);
+    
+            // Check if the popup exists and hide it
+            if (popup) {
+                popup.style.display = 'none';
+            }
+        }
+    </script>
+    
+
+
+    <!-- Sandwich Options Popup -->
+    <div id="targetSandwichOptions" class="popup">
+        <h3>Customize Your Sandwich</h3>
+        <label for="sandwichSize">Select Sandwich Size:</label>
+        <select id="sandwichSize" name="sandwichSize">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+    
+        <label for="sandwichSauce">Select Sauce:</label>
+        <select id="sandwichSauce" name="sandwichSauce">
+            <option value="mayo">Mayo</option>
+            <option value="mustard">Mustard</option>
+            <option value="ketchup">Ketchup</option>
+            <!-- Add more sauce options as needed -->
+        </select>
+    
+        <label for="sandwichToppings">Choose Toppings:</label>
+        <input type="checkbox" name="sandwichTopping" value="lettuce"> Lettuce
+        <input type="checkbox" name="sandwichTopping" value="tomato"> Tomato
+        <input type="checkbox" name="sandwichTopping" value="onions"> Onions
+        <input type="checkbox" name="sandwichTopping" value="cheese"> Cheese
+        <input type="checkbox" name="sandwichTopping" value="pickles"> Pickles
+        <!-- Add more topping options as needed -->
+    
+        <button onclick="hideFoodOptions('targetSandwichOptions')">Done</button>
+    </div>
+    
+
+
+    <!-- Domino's Options Popup -->
+    <div id="dominosPizzaOptions" class="popup">
+        <h3>Customize Your Pizza</h3>
+    
+        <label for="pizzaSize">Select Pizza Size:</label>
+        <select id="pizzaSize" name="pizzaSize">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+    
+        <label for="pizzaSauce">Select Sauce:</label>
+        <select id="pizzaSauce" name="pizzaSauce">
+            <option value="tomato">Tomato</option>
+            <option value="marinara">Marinara</option>
+            <option value="white">White</option>
+            <option value="pesto">Pesto</option>
+            <option value="bbq">BBQ</option>
+            <option value="buffalo">Buffalo</option>
+            <option value="ranch">Ranch</option>
+            <option value="salsa">Salsa</option>
+            <option value="olive-tapenade">Olive Tapenade</option>
+            <option value="hummus">Hummus</option>
+            <option value="garlic-butter">Garlic Butter</option>
+            <option value="sriracha">Sriracha</option>
+            <option value="balsamic-glaze">Balsamic Glaze</option>
+            <!-- Add more sauce options as needed -->
+        </select>
+    
+        <label for="pizzaToppings">Choose Toppings:</label>
+        <input type="checkbox" name="pizzaTopping" value="pepperoni"> Pepperoni
+        <input type="checkbox" name="pizzaTopping" value="mushrooms"> Mushrooms
+        <input type="checkbox" name="pizzaTopping" value="onions"> Onions
+        <input type="checkbox" name="pizzaTopping" value="greenBellPeppers"> Green Bell Peppers
+        <input type="checkbox" name="pizzaTopping" value="blackOlives"> Black Olives
+        <input type="checkbox" name="pizzaTopping" value="greenOlives"> Green Olives
+        <input type="checkbox" name="pizzaTopping" value="sausage"> Sausage
+        <input type="checkbox" name="pizzaTopping" value="bacon"> Bacon
+        <input type="checkbox" name="pizzaTopping" value="ham"> Ham
+        <input type="checkbox" name="pizzaTopping" value="pineapple"> Pineapple
+        <input type="checkbox" name="pizzaTopping" value="extraCheese"> Extra Cheese
+        <input type="checkbox" name="pizzaTopping" value="anchovies"> Anchovies
+        <input type="checkbox" name="pizzaTopping" value="tomatoes"> Tomatoes
+        <input type="checkbox" name="pizzaTopping" value="spinach"> Spinach
+        <input type="checkbox" name="pizzaTopping" value="freshBasil"> Fresh Basil
+        <input type="checkbox" name="pizzaTopping" value="jalapenos"> Jalapeños
+        <input type="checkbox" name="pizzaTopping" value="redPepperFlakes"> Red Pepper Flakes
+        <input type="checkbox" name="pizzaTopping" value="artichokeHearts"> Artichoke Hearts
+        <input type="checkbox" name="pizzaTopping" value="chicken"> Chicken
+        <input type="checkbox" name="pizzaTopping" value="groundBeef"> Ground Beef
+        <input type="checkbox" name="pizzaTopping" value="fetaCheese"> Feta Cheese
+        <input type="checkbox" name="pizzaTopping" value="sunDriedTomatoes"> Sun-Dried Tomatoes
+        <input type="checkbox" name="pizzaTopping" value="goatCheese"> Goat Cheese
+        <input type="checkbox" name="pizzaTopping" value="onions"> Onions
+        <input type="checkbox" name="pizzaTopping" value="garlic"> Garlic
+        <input type="checkbox" name="pizzaTopping" value="provoloneCheese"> Provolone Cheese
+        <input type="checkbox" name="pizzaTopping" value="redOnions"> Red Onions
+        <input type="checkbox" name="pizzaTopping" value="bbqChicken"> BBQ Chicken
+        <input type="checkbox" name="pizzaTopping" value="roastedRedPeppers"> Roasted Red Peppers
+        <input type="checkbox" name="pizzaTopping" value="pestoSauce"> Pesto Sauce
+    
+        <button onclick="hideFoodOptions('dominosPizzaOptions')">Done</button>
+    </div>
+    
+
+
+    <div id="dominosPastaOptions" class="popup">
+        <h3>Customize Your Pasta</h3>
+    
+        <label for="pastaType">Select Pasta Type:</label>
+        <select id="pastaType" name="pastaType">
+            <option value="spaghetti">Spaghetti</option>
+            <option value="penne">Penne</option>
+            <option value="fettuccine">Fettuccine</option>
+            <!-- Add more pasta type options as needed -->
+        </select>
+    
+        <label for="pastaSauce">Select Pasta Sauce:</label>
+        <select id="pastaSauce" name="pastaSauce">
+            <option value="tomato">Tomato</option>
+            <option value="marinara">Marinara</option>
+            <option value="alfredo">Alfredo</option>
+            <option value="pesto">Pesto</option>
+            <!-- Add more pasta sauce options as needed -->
+        </select>
+    
+        <label for="pastaToppings">Choose Toppings:</label>
+        <input type="checkbox" name="pastaTopping" value="parmesan"> Parmesan
+        <input type="checkbox" name="pastaTopping" value="blackOlives"> Black Olives
+        <input type="checkbox" name="pastaTopping" value="freshBasil"> Fresh Basil
+        <input type="checkbox" name="pastaTopping" value="mushrooms"> Mushrooms
+        <input type="checkbox" name="pastaTopping" value="garlic"> Garlic
+        <input type="checkbox" name="pastaTopping" value="redPepperFlakes"> Red Pepper Flakes
+        <input type="checkbox" name="pastaTopping" value="sunDriedTomatoes"> Sun-Dried Tomatoes
+        <!-- Add more pasta topping options as needed -->
+    
+        <button onclick="hideFoodOptions('dominosPastaOptions')">Done</button>
+    </div>
+    
+
+
+    <div id="dominosWingsOptions" class="popup">
+        <h3>Customize Your Wings</h3>
+    
+        <label for="wingType">Select Wing Type:</label>
+        <select id="wingType" name="wingType">
+            <option value="spicy">Spicy</option>
+            <option value="BBQ">BBQ</option>
+            <option value="honeyMustard">Honey Mustard</option>
+            <!-- Add more wing type options as needed -->
+        </select>
+    
+        <label for="wingSauce">Select Wing Sauce:</label>
+        <select id="wingSauce" name="wingSauce">
+            <option value="mild">Mild</option>
+            <option value="hot">Hot</option>
+            <option value="teriyaki">Teriyaki</option>
+            <!-- Add more wing sauce options as needed -->
+        </select>
+    
+        <label for="wingToppings">Choose Toppings:</label>
+        <input type="checkbox" name="wingTopping" value="blueCheese"> Blue Cheese
+        <input type="checkbox" name="wingTopping" value="ranchDressing"> Ranch Dressing
+        <input type="checkbox" name="wingTopping" value="celery"> Celery
+        <input type="checkbox" name="wingTopping" value="carrots"> Carrots
+        <!-- Add more wing topping options as needed -->
+    
+        <button onclick="hideFoodOptions('dominosWingsOptions')">Done</button>
+    </div>
+    
+
+
+    <!-- Pizza Hut Options Popup -->
+    <div id="pizzaHutPizzaOptions" class="popup">
+        <h3>Customize Your Pizza</h3>
+    
+        <label for="pizzaSize">Select Pizza Size:</label>
+        <select id="pizzaSize" name="pizzaSize">
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select>
+    
+        <label for="sauce">Select Sauce:</label>
+        <select id="sauce" name="sauce">
+            <option value="tomato">Tomato</option>
+            <option value="marinara">Marinara</option>
+            <option value="white">White</option>
+            <option value="pesto">Pesto</option>
+            <option value="bbq">BBQ</option>
+            <option value="buffalo">Buffalo</option>
+            <option value="ranch">Ranch</option>
+            <option value="salsa">Salsa</option>
+            <option value="olive-tapenade">Olive Tapenade</option>
+            <option value="hummus">Hummus</option>
+            <option value="garlic-butter">Garlic Butter</option>
+            <option value="sriracha">Sriracha</option>
+            <option value="balsamic-glaze">Balsamic Glaze</option>
+            <!-- Add more sauce options as needed -->
+        </select>
+    
+        <label for="topping">Choose Toppings:</label>
+        <input type="checkbox" name="topping" value="pepperoni"> Pepperoni
+        <input type="checkbox" name="topping" value="mushrooms"> Mushrooms
+        <input type="checkbox" name="topping" value="onions"> Onions
+        <input type="checkbox" name="topping" value="greenBellPeppers"> Green Bell Peppers
+        <input type="checkbox" name="topping" value="blackOlives"> Black Olives
+        <input type="checkbox" name="topping" value="greenOlives"> Green Olives
+        <input type="checkbox" name="topping" value="sausage"> Sausage
+        <input type="checkbox" name="topping" value="bacon"> Bacon
+        <input type="checkbox" name="topping" value="ham"> Ham
+        <input type="checkbox" name="topping" value="pineapple"> Pineapple
+        <input type="checkbox" name="topping" value="extraCheese"> Extra Cheese
+        <input type="checkbox" name="topping" value="anchovies"> Anchovies
+        <input type="checkbox" name="topping" value="tomatoes"> Tomatoes
+        <input type="checkbox" name="topping" value="spinach"> Spinach
+        <input type="checkbox" name="topping" value="freshBasil"> Fresh Basil
+        <input type="checkbox" name="topping" value="jalapenos"> Jalapeños
+        <input type="checkbox" name="topping" value="redPepperFlakes"> Red Pepper Flakes
+        <input type="checkbox" name="topping" value="artichokeHearts"> Artichoke Hearts
+        <input type="checkbox" name="topping" value="chicken"> Chicken
+        <input type="checkbox" name="topping" value="groundBeef"> Ground Beef
+        <input type="checkbox" name="topping" value="fetaCheese"> Feta Cheese
+        <input type="checkbox" name="topping" value="sunDriedTomatoes"> Sun-Dried Tomatoes
+        <input type="checkbox" name="topping" value="goatCheese"> Goat Cheese
+        <input type="checkbox" name="topping" value="redOnions"> Red Onions
+        <input type="checkbox" name="topping" value="bbqChicken"> BBQ Chicken
+        <input type="checkbox" name="topping" value="roastedRedPeppers"> Roasted Red Peppers
+        <input type="checkbox" name="topping" value="pestoSauce"> Pesto Sauce
+        <button onclick="hideFoodOptions('pizzaHutPizzaOptions')">Done</button>
+    </div>
+    
+
+
+    <div id="pizzaHutPastaOptions" class="popup">
+        <h3>Customize Your Pasta</h3>
+    
+        <label for="pastaType">Select Pasta Type:</label>
+        <select id="pastaType" name="pastaType">
+            <option value="spaghetti">Spaghetti</option>
+            <option value="penne">Penne</option>
+            <option value="fettuccine">Fettuccine</option>
+            <!-- Add more pasta types as needed -->
+        </select>
+    
+        <label for="sauce">Select Sauce:</label>
+        <select id="sauce" name="sauce">
+            <option value="tomato">Tomato</option>
+            <option value="marinara">Marinara</option>
+            <option value="alfredo">Alfredo</option>
+            <option value="pesto">Pesto</option>
+            <option value="carbonara">Carbonara</option>
+            <option value="bolognese">Bolognese</option>
+            <!-- Add more sauce options as needed -->
+        </select>
+    
+        <label for="topping">Choose Toppings:</label>
+        <input type="checkbox" name="topping" value="parmesanCheese"> Parmesan Cheese
+        <input type="checkbox" name="topping" value="crushedRedPepper"> Crushed Red Pepper
+        <input type="checkbox" name="topping" value="garlicBread"> Garlic Bread
+        <input type="checkbox" name="topping" value="meatballs"> Meatballs
+        <input type="checkbox" name="topping" value="sausage"> Sausage
+        <input type="checkbox" name="topping" value="mushrooms"> Mushrooms
+        <input type="checkbox" name="topping" value="onions"> Onions
+        <input type="checkbox" name="topping" value="spinach"> Spinach
+        <!-- Add more topping options as needed -->
+        
+        <button onclick="hideFoodOptions('pizzaHutPastaOptions')">Done</button>
+    </div>
+    
+
+
+    <div id="pizzaHutDessertOptions" class="popup">
+        <h3>Customize Your Dessert</h3>
+    
+        <label for="dessertType">Select Dessert Type:</label>
+        <select id="dessertType" name="dessertType">
+            <option value="cake">Cake</option>
+            <option value="cookies">Cookies</option>
+            <option value="iceCream">Ice Cream</option>
+            <!-- Add more dessert types as needed -->
+        </select>
+    
+        <label for="topping">Choose Toppings:</label>
+        <input type="checkbox" name="topping" value="chocolateChips"> Chocolate Chips
+        <input type="checkbox" name="topping" value="sprinkles"> Sprinkles
+        <input type="checkbox" name="topping" value="nuts"> Nuts
+        <input type="checkbox" name="topping" value="whippedCream"> Whipped Cream
+        <input type="checkbox" name="topping" value="caramelSauce"> Caramel Sauce
+        <input type="checkbox" name="topping" value="chocolateSauce"> Chocolate Sauce
+        <!-- Add more dessert topping options as needed -->
+        
+        <button onclick="hideFoodOptions('pizzaHutDessertOptions')">Done</button>
+    </div>
+    
+
+
+    <!-- Taco Bell Options Popup -->
+    <div id="tacoBellTacoOptions" class="popup">
+        <h3>Customize Your Taco</h3>
+    
+        <label for="tacoType">Select Taco Type:</label>
+        <select id="tacoType" name="tacoType">
+            <option value="beef">Beef</option>
+            <option value="chicken">Chicken</option>
+            <option value="vegetarian">Vegetarian</option>
+            <!-- Add more taco type options as needed -->
+        </select>
+    
+        <label for="sauce">Select Sauce:</label>
+        <select id="sauce" name="sauce">
+            <option value="salsa">Salsa</option>
+            <option value="guacamole">Guacamole</option>
+            <option value="sourCream">Sour Cream</option>
+            <option value="hotSauce">Hot Sauce</option>
+            <!-- Add more sauce options as needed -->
+        </select>
+    
+        <label for="topping">Choose Toppings:</label>
+        <input type="checkbox" name="topping" value="lettuce"> Lettuce
+        <input type="checkbox" name="topping" value="tomatoes"> Tomatoes
+        <input type="checkbox" name="topping" value="cheese"> Cheese
+        <input type="checkbox" name="topping" value="onions"> Onions
+        <input type="checkbox" name="topping" value="jalapenos"> Jalapeños
+        <input type="checkbox" name="topping" value="sourCream"> Sour Cream
+        <!-- Add more taco topping options as needed -->
+    
+        <button onclick="hideFoodOptions('tacoBellTacoOptions')">Done</button>
+    </div>
+    
+
+
+    <div id="tacoBellBurritoOptions" class="popup">
+        <h3>Customize Your Burrito</h3>
+    
+        <label for="burritoType">Select Burrito Type:</label>
+        <select id="burritoType" name="burritoType">
+            <option value="beef">Beef</option>
+            <option value="chicken">Chicken</option>
+            <option value="vegetarian">Vegetarian</option>
+            <!-- Add more burrito type options as needed -->
+        </select>
+    
+        <label for="sauce">Select Sauce:</label>
+        <select id="sauce" name="sauce">
+            <option value="salsa">Salsa</option>
+            <option value="guacamole">Guacamole</option>
+            <option value="sourCream">Sour Cream</option>
+            <option value="hotSauce">Hot Sauce</option>
+            <!-- Add more sauce options as needed -->
+        </select>
+    
+        <label for="topping">Choose Toppings:</label>
+        <input type="checkbox" name="topping" value="lettuce"> Lettuce
+        <input type="checkbox" name="topping" value="tomatoes"> Tomatoes
+        <input type="checkbox" name="topping" value="cheese"> Cheese
+        <input type="checkbox" name="topping" value="onions"> Onions
+        <input type="checkbox" name="topping" value="jalapenos"> Jalapeños
+        <input type="checkbox" name="topping" value="sourCream"> Sour Cream
+        <!-- Add more burrito topping options as needed -->
+    
+        <button onclick="hideFoodOptions('tacoBellBurritoOptions')">Done</button>
+    </div>
+    
+
+
+    <div id="tacoBellNachosOptions" class="popup">
+        <h3>Customize Your Nachos</h3>
+    
+        <label for="nachosType">Select Nachos Type:</label>
+        <select id="nachosType" name="nachosType">
+            <option value="cheese">Cheese</option>
+            <option value="beef">Beef</option>
+            <option value="chicken">Chicken</option>
+            <option value="veggie">Veggie</option>
+            <!-- Add more nachos type options as needed -->
+        </select>
+    
+        <label for="sauce">Select Sauce:</label>
+        <select id="sauce" name="sauce">
+            <option value="salsa">Salsa</option>
+            <option value="cheeseSauce">Cheese Sauce</option>
+            <option value="guacamole">Guacamole</option>
+            <option value="sourCream">Sour Cream</option>
+            <!-- Add more sauce options as needed -->
+        </select>
+    
+        <label for="topping">Choose Toppings:</label>
+        <input type="checkbox" name="topping" value="jalapenos"> Jalapeños
+        <input type="checkbox" name="topping" value="blackOlives"> Black Olives
+        <input type="checkbox" name="topping" value="sourCream"> Sour Cream
+        <input type="checkbox" name="topping" value="guacamole"> Guacamole
+        <input type="checkbox" name="topping" value="greenOnions"> Green Onions
+        <input type="checkbox" name="topping" value="tomatoes"> Tomatoes
+        <input type="checkbox" name="topping" value="chili"> Chili
+        <input type="checkbox" name="topping" value="jalapenoCheese"> Jalapeno Cheese
+        <input type="checkbox" name="topping" value="slicedPeppers"> Sliced Peppers
+        <!-- Add more nachos topping options as needed -->
+    
+        <button onclick="hideFoodOptions('tacoBellNachosOptions')">Done</button>
+    </div>
+  
+    <h1>Random OTP Generator</h1>
+    <p id="otpDisplay"></p>
+    <button class = "rana" onclick="generateOTP()">Generate OTP</button>
+
+    <script>
+        function generateOTP() {
+            // Length of the OTP
+            const otpLength = 6;
+
+            // Generate a random OTP
+            const otp = Math.floor(Math.random() * Math.pow(10, otpLength)).toString().padStart(otpLength, '0');
+
+            // Display the OTP
+            document.getElementById('otpDisplay').textContent = `Generated OTP: ${otp}`;
+        }
+    </script>
+    
+    
+
+
+    <script>
+        function toggleBrandMenu(brandMenu) {
+            brandMenu.style.display = brandMenu.style.display === 'none' ? 'flex' : 'none';
+        }
+
+        function showFoodOptions(popupId) {
+            const foodOptionsPopup = document.getElementById(popupId);
+            foodOptionsPopup.style.display = 'block';
+        }
+
+        function hideFoodOptions(popupId) {
+            const foodOptionsPopup = document.getElementById(popupId);
+            foodOptionsPopup.style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>
